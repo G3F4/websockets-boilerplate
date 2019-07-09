@@ -66,7 +66,7 @@ wss.on('connection', ws => {
   process.stdout.write('connection\n');
   ws.on('message', message => {
     process.stdout.write('message\n');
-    const { action, data } = JSON.parse(message.toString());
+    const { action } = JSON.parse(message.toString());
 
     if (action as CounterAction === 'increment') {
       counter++;
@@ -79,6 +79,6 @@ wss.on('connection', ws => {
   ws.send(JSON.stringify({ action: 'update', data: counter }));
 });
 
-server.listen(process.env.PORT || 3001, () => {
+server.listen(process.env.PORT || 3002, () => {
   process.stdout.write('server started\n');
 });
