@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('root').appendChild(contentNode);
 
-  const ws = new WebSocket('ws://localhost:3001');
+  const ws = new WebSocket(`ws://${document.location.href.split('//')[1]}`);
 
   ws.onopen = event => {
     console.log(['WebSocket.onopen'], event);

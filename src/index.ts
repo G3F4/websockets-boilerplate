@@ -79,6 +79,6 @@ wss.on('connection', ws => {
   ws.send(JSON.stringify({ action: 'update', data: counter }));
 });
 
-server.listen(process.env.PORT || 3002, () => {
+server.listen(process.env.PORT || 3001, () => {
   process.stdout.write('server started\n');
 });
