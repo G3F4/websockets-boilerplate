@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import http from 'http';
+//import https from 'https';
 import * as process from 'process';
 import { Server } from 'ws';
 import { CounterAction, StaticFileExtension } from './types';
@@ -7,6 +8,7 @@ import { CounterAction, StaticFileExtension } from './types';
 let counter = 0;
 
 const server = http.createServer({
+// const server = https.createServer({
   // cert: fs.readFileSync('/path/to/cert.pem'),
   // key: fs.readFileSync('/path/to/key.pem')
 }, (req, res) => {
