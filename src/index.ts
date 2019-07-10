@@ -1,16 +1,16 @@
 import { readFileSync } from 'fs';
-import http from 'http';
-//import https from 'https';
+//import http from 'http';
+import https from 'https';
 import * as process from 'process';
 import { Server } from 'ws';
 import { CounterAction, StaticFileExtension } from './types';
 
 let counter = 0;
 
-const server = http.createServer({
-//const server = https.createServer({
-//  key: readFileSync(`${process.cwd()}/security/server.key`),
-//  cert: readFileSync(`${process.cwd()}/security/server.cert`),
+//const server = http.createServer({
+const server = https.createServer({
+  key: readFileSync(`${process.cwd()}/security/server.key`),
+  cert: readFileSync(`${process.cwd()}/security/server.cert`),
 }, (req, res) => {
   try {
     // read url
