@@ -8,9 +8,9 @@ import { CounterAction, StaticFileExtension } from './types';
 let counter = 0;
 
 const server = http.createServer({
-// const server = https.createServer({
-  // cert: fs.readFileSync('/path/to/cert.pem'),
-  // key: fs.readFileSync('/path/to/key.pem')
+//const server = https.createServer({
+//  key: readFileSync(`${process.cwd()}/security/server.key`),
+//  cert: readFileSync(`${process.cwd()}/security/server.cert`),
 }, (req, res) => {
   try {
     // read url
